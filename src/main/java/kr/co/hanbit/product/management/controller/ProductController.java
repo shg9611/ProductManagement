@@ -1,5 +1,6 @@
 package kr.co.hanbit.product.management.controller;
 
+import kr.co.hanbit.product.management.dto.ProductDto;
 import kr.co.hanbit.product.management.entity.Product;
 import kr.co.hanbit.product.management.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,9 @@ public class ProductController {
     }
 
     @RequestMapping(value="/products", method= RequestMethod.POST)
-    public Product createProduct(@RequestBody Product product){
+    public ProductDto createProduct(@RequestBody ProductDto productDto){
 
-        Product savedProduct=productService.add(product);
+        ProductDto savedProduct=productService.add(productDto);
 
         return savedProduct;
     }
