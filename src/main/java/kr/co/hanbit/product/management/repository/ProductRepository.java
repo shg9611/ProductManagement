@@ -1,12 +1,14 @@
 package kr.co.hanbit.product.management.repository;
 
 import kr.co.hanbit.product.management.entity.Product;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicLong;
 
+@Slf4j
 @Repository
 public class ProductRepository {
 
@@ -20,4 +22,37 @@ public class ProductRepository {
         return product;
     }
 
+    public Product findById(Long id){
+
+        return productList.stream()
+                .filter(product -> product.sameId(id))
+                .findFirst()
+                .orElseThrow();
+    }
+
+    public List<Product> findAll(){
+
+        return productList;
+    }
+
+    public List<Product> findByName(String name){
+
+        return productList.stream()
+                .filter(product -> product.containName(name))
+                .toList();
+    }
+
+    public Product update(Product product) {
+
+        Integer indexToModify = productList.indexOf(product);
+        productList.set(indexToModify,product);
+
+        return product;
+    }
+
+    public void delete(Long id){
+
+        Product target= this.findById(id);
+        productList.remove(target);
+    }
 }

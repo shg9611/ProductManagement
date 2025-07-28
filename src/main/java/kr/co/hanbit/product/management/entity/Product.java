@@ -1,6 +1,9 @@
 package kr.co.hanbit.product.management.entity;
 
 import jakarta.persistence.Entity;
+import kr.co.hanbit.product.management.dto.ProductDto;
+
+import java.util.Objects;
 
 
 public class Product {
@@ -29,5 +32,36 @@ public class Product {
     public Integer getAmount() {
         return amount;
     }
+
+    public boolean sameId(Long id) {
+        return this.id.equals(id);
+    }
+
+    public boolean containName(String name){
+        return this.name.contains(name);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Product product = (Product) o;
+        return Objects.equals(id, product.id);
+    }
+
+    /*
+    public void update(ProductDto productDto) {
+
+        if (productDto.getName()!=null){
+            this.name= productDto.getName();
+        }
+        if (productDto.getPrice()!=null){
+            this.price= productDto.getPrice();
+        }
+        if (productDto.getAmount()!=null){
+            this.amount= productDto.getAmount();
+        }
+
+    }*/
 }
 
