@@ -1,5 +1,6 @@
 package kr.co.hanbit.product.management.controller;
 
+import jakarta.validation.Valid;
 import kr.co.hanbit.product.management.dto.ProductDto;
 import kr.co.hanbit.product.management.entity.Product;
 import kr.co.hanbit.product.management.service.ProductService;
@@ -21,7 +22,7 @@ public class ProductController {
     }
 
     @RequestMapping(value="/products", method= RequestMethod.POST)
-    public ProductDto createProduct(@RequestBody ProductDto productDto){
+    public ProductDto createProduct(@Valid @RequestBody ProductDto productDto){
 
         ProductDto savedProduct=productService.add(productDto);
 

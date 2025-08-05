@@ -1,16 +1,22 @@
 package kr.co.hanbit.product.management.dto;
 
+import jakarta.validation.constraints.NotNull;
+
 public class ProductDto {
 
 
     private Long id;
+    @NotNull
     private String name;
+    @NotNull
     private Integer price;
+    @NotNull
     private Integer amount;
 
     public Long getId() {
         return id;
     }
+
 
     public void setId(Long id){
         this.id=id;
