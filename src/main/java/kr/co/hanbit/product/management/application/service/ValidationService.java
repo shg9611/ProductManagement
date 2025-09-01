@@ -1,4 +1,4 @@
-package kr.co.hanbit.product.management.service;
+package kr.co.hanbit.product.management.application.service;
 
 import jakarta.validation.Valid;
 import org.springframework.stereotype.Service;

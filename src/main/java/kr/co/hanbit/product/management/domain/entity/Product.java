@@ -1,10 +1,8 @@
-package kr.co.hanbit.product.management.entity;
+package kr.co.hanbit.product.management.domain.entity;
 
-import jakarta.persistence.Entity;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
-import kr.co.hanbit.product.management.dto.ProductDto;
 
 import java.util.Objects;
 

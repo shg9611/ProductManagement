@@ -1,9 +1,8 @@
-package kr.co.hanbit.product.management.controller;
+package kr.co.hanbit.product.management.presentation.controller;
 
 import jakarta.validation.Valid;
-import kr.co.hanbit.product.management.dto.ProductDto;
-import kr.co.hanbit.product.management.entity.Product;
-import kr.co.hanbit.product.management.service.ProductService;
+import kr.co.hanbit.product.management.presentation.dto.ProductDto;
+import kr.co.hanbit.product.management.application.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

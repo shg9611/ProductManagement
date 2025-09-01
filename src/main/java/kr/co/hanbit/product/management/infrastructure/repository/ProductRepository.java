@@ -1,6 +1,7 @@
-package kr.co.hanbit.product.management.repository;
+package kr.co.hanbit.product.management.infrastructure.repository;
 
-import kr.co.hanbit.product.management.entity.Product;
+import kr.co.hanbit.product.management.domain.EntityNotFoundException;
+import kr.co.hanbit.product.management.domain.entity.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 
@@ -27,7 +28,7 @@ public class ProductRepository {
         return productList.stream()
                 .filter(product -> product.sameId(id))
                 .findFirst()
-                .orElseThrow();
+                .orElseThrow(()->new EntityNotFoundException("Product를 찾지 못하였습니다."));
     }
 
     public List<Product> findAll(){

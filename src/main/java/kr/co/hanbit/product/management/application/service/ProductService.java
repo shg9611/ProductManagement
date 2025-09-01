@@ -1,14 +1,13 @@
-package kr.co.hanbit.product.management.service;
+package kr.co.hanbit.product.management.application.service;
 
-import kr.co.hanbit.product.management.dto.ProductDto;
-import kr.co.hanbit.product.management.entity.Product;
-import kr.co.hanbit.product.management.repository.ProductRepository;
+import kr.co.hanbit.product.management.presentation.dto.ProductDto;
+import kr.co.hanbit.product.management.domain.entity.Product;
+import kr.co.hanbit.product.management.infrastructure.repository.ProductRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @Service

@@ -1,4 +1,4 @@
-package kr.co.hanbit.product.management.dto;
+package kr.co.hanbit.product.management.presentation.dto;
 
 import jakarta.validation.constraints.NotNull;
 
